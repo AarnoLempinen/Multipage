@@ -29,7 +29,10 @@
 .main {
   margin-top: 60px; /* Add a top margin to avoid content overlay */
 }
-
+h2{
+  text-align: center;
+  margin: auto;
+}
 .hero{
   
   width: 60%;
@@ -41,6 +44,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: auto;
 }
 
 
@@ -52,6 +56,7 @@ form{
 .input-group{
   margin-bottom: 30px;
   position: relative;
+  
 }
 
 input, textarea{
