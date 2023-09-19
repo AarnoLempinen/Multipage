@@ -31,8 +31,9 @@
 }
 
 .hero{
-  width: 100%;
-  height: 100vh;
+  
+  width: 60%;
+  height: 80vh;
   background-image: url("../assets/pictures/evoluutio.png"); 
   background-position: center;
   background-size: cover;
@@ -82,6 +83,7 @@ button{
   width: 100%;
   cursor: pointer;
   transition: 0.3s ease-in-out;
+
 
 }
 
