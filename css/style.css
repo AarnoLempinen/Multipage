@@ -105,6 +105,10 @@ h2{
   --clr-body-bg: hsl(0, 100%, 93%);
 }
 
+
+
+
+
 .dark,
 :root:has(#dark:checked){
 
@@ -125,14 +129,35 @@ h2{
     color: #210f00;
     margin-top: 20px;
   }
+
+  .hero{
+  
+    width: 50%;
+    height: 66vh;
+    background-image: url("../assets/pictures/tähtitaivas.png"); 
+    background-position: center;
+    background-size: cover;
+    background-color: #093d6a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+
+
   
   --clr-body-bg: hsl(0, 90%, 32%);
   --clr-body-bg: hsl(0, 95%, 25%);
   --clr-body-bg: hsl(0 0% 15%);
-  --clr-body-bg: hsl(0, 0%, 54%);
+  --clr-body-bg: hsl(0, 1%, 51%);
 
 
 }
+
+
+
+
+
 
 .visually-hidden{
   clip: rect(0 0 0 0);
