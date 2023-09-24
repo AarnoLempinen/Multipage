@@ -1,71 +1,95 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset ="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Home</title>
-<link rel="stylesheet" href="css/style.css" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPA Example</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
-  <header>
-
-
-<div class="navbar">
-    <a href="#" onclick="getPageContent('home')">Home </a>
-    <a href="#" onclick="getPageContent('contact')">Contact</a>
-    <a href="#" onclick="getPageContent('images')">Images</a>
-    <a href="#" onclick="getPageContent('news')">News</a>
-
-
-    <form class="color-picker" action="">
-      <fieldset>
-
-        <label for="normal" class="visually-hidden">Normal theme</label>
-        <input type="radio" name="theme" id="normal">
-
-        <label for="light" class="visually-hidden">Light theme</label>
-        <input type="radio" name="theme" id="light" >
-
-        <label for="dark" class="visually-hidden">Dark theme</label>
-        <input type="radio" id="dark" name="theme">
-
-      </fieldset>
-    </form>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="#" onclick="loadPage('home')">Home</a>
+            <a href="#" onclick="loadPage('images')">Images</a>
+            <a href="#" onclick="loadPage('news')">News</a>
+            <a href="#" onclick="loadPage('contact')">Contact</a>
+            <form class="color-picker" action="">
+                <fieldset>
+          
+                  <label for="normal" class="visually-hidden">Normal theme</label>
+                  <input type="radio" name="theme" id="normal">
+          
+                  <label for="light" class="visually-hidden">Light theme</label>
+                  <input type="radio" name="theme" id="light" >
+          
+                  <label for="dark" class="visually-hidden">Dark theme</label>
+                  <input type="radio" id="dark" name="theme">
+          
+                </fieldset>
+              </form>
+        </div>
+    </header>
     
-  </div>
-  
-</header>
-  
-  <div class="main">
-    <section>
+    <div class="main">
+        <div class="container">
+            
+            <!-- Content will be loaded here -->
+        </div>
+    </div>
 
-      <h1>Welcome to My Website</h1>
-      <p>This is the home page.</p>
-      
-      
+    <script>
+        
+        function loadPage(page) {
+            const content = document.querySelector('.container');
+            switch (page) {
+                case 'home':
+                    content.innerHTML = `<section>
+                        <h1>Welcome to My Website</h1>
+                        <p>This is the home page.</p>
+                    </section>`;
+                    break;
+                case 'contact':
+                    content.innerHTML = `<section>
+                        <h2>Contact us</h2>
+                        <p></p>  
+                        <div class="hero">
+                            <form>
+                                <div class="row">
+                                    <div class="input-group">
+                                        <input type="text" id="name" required>
+                                        <label for="name"> Your Name</label>
+                                    </div>
 
-  </section>
+                                    <div class="input-group">
+                                        <input type="text" id="number" required>
+                                        <label for="number">Phone No.</label>
+                                    </div>
+                                </div>
 
+                                <div class="input-group">
+                                    <input type="text" id="email" required>
+                                    <label for="email">E-mail Id</label>
+                                </div>
 
+                                <div class="input-group">
+                                    <textarea id="message" rows="8" required></textarea>
+                                    <label for="message">Your Message</label>
+                                </div>
 
+                                <button type="submit">SUBMIT</button>
+                            </form>
+                        </div>
+                    </section>`;
+                    break;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="container">
+                case 'images':
+                content.innerHTML = `
+                <div class="container">
   <div class="heading">
     <h3>Photo <span>Gallery</span></h3>
   </div>
   <div class="box">
+    
 
     <div class="dream">
     <div class="jee"><img src="assets/pictures/talvi.png" alt="talvi"></div> 
@@ -76,9 +100,7 @@
             <div class="jee"><img src="assets/pictures/ilves.png"></div> 
 
 </div>
-    
-
-    <div class="dream">
+<div class="dream">
       <div class="jee"><img src="assets/pictures/susi.png"></div>
       <div class="jee"><img src="assets/pictures/karhu.png"></div>
         <div class="jee"><img src="assets/pictures/hirvi.png"></div>
@@ -87,7 +109,6 @@
 
 
     </div>
-
     <div class="dream">
       <div class="jee"><img src="assets/pictures/tykky.png"></div>
       <div class="jee"><img src="assets/pictures/järvi.png"></div>
@@ -97,48 +118,40 @@
 
 
     </div>
-  </div>
+</div>
 
-  <div class="popup-image">
+<div class="popup-image">
     <span>&times;</span>
     <img src="assets/pictures/talvi.png" alt="talvi">
 
+    
+
   </div>
 
-
-  <script>
-    document.querySelectorAll('.dream img').forEach(image=>{
-      image.onclick = () =>{
-        document.querySelector('.popup-image').style.display = 'block';
-        document.querySelector('.popup-image img').src = image.getAttribute('src');
-      }
-    });
-
-    document.querySelector('.popup-image span').onclick = () =>{
-      document.querySelector('.popup-image').style.display = 'none';     
-    }
-
-  </script>
-
+  
 
   <div class="btn">
     <a href="#">More</a>
   </div>
 
+</div>`
 
+document.querySelectorAll('.dream img').forEach(image => {
+                        image.onclick = () => {
+                            document.querySelector('.popup-image').style.display = 'block';
+                            document.querySelector('.popup-image img').src = image.getAttribute('src');
+                        };
+                    });
 
+                    document.querySelector('.popup-image span').onclick = () => {
+                        document.querySelector('.popup-image').style.display = 'none';
+                    };
+                    // Add your image gallery logic here
+                    break;
 
-
-</div>
-
-
-
-
-
-  
-
-
-    <title>Responsive Blog and news section</title>
+                case 'news':
+                content.innerHTML = `
+                <title>Responsive Blog and news section</title>
 
     <div class="blog-section">
       <div class="section-content blog">
@@ -204,42 +217,42 @@
                                 </div>
 
               </div>
-            </div>
+            </div>`
+                    // Add your news section logic here
+                    break;
+                default:
+                    content.innerHTML = '<h2>Page not found</h2><p>The requested page does not exist.</p>';
+            }
+        }
 
-            <h2>Contact us</h2>
-            <p></p>
-  <div class="hero">
+        // Initial page load or navigating back/forward with browser history
+        window.addEventListener('popstate', (event) => {
+            const page = event.state ? event.state.page : 'home';
+            loadPage(page);
+        });
 
-    <form>
-      <div class="row">
-        <div class="input-group">
-            <input type="text" id = "name" required>
-            <label for="name"> Your Name</label>
-        </div>
+        // Add event listeners to navigation links
+        const navigationLinks = document.querySelectorAll('.navbar a');
+        navigationLinks.forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                const page = this.getAttribute('onclick').match(/\('([^']+)'\)/)[1];
+                loadPage(page);
+                // Optionally, you can update the URL using pushState to maintain browser history.
+                history.pushState({ page }, '', `#${page}`);
+            });
+        });
 
-        <div class="input-group">
-            <input type="text" id = "number" required>
-            <label for="number">Phone No.</label>
-        </div>
-        </div>
+        // Initial page load based on URL hash or default to 'home'
+        const initialPage = window.location.hash.replace('#', '') || 'home';
+        loadPage(initialPage);
 
-        <div class="input-group">
-            <input type="text" id = "email" required>
-            <label for="email">E-mail Id</label>
-        </div>
-
-        <div class="input-group">
-            <textarea  id="message" rows="8" required></textarea>
-            <label for="message">Your Message</label>
-        </div>
-
-        <button type= "Submit">SUBMIT</button>
         
+    </script>
 
 
-    </form>
- 
+    
 
-</div>
 
-  </div>
+</body>
+</html>

@@ -32,6 +32,18 @@
   color: black;
 }
 
+
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+#content {
+  padding: 60px;
+}
+
+
+
 /* Main content */
 .main {
   margin-top: 60px; /* Add a top margin to avoid content overlay */
@@ -132,8 +144,8 @@ h2{
 
   .hero{
   
-    width: 50%;
-    height: 66vh;
+    width: 110%;
+    height: 80vh;
     background-image: url("../assets/pictures/tähtitaivas.png"); 
     background-position: center;
     background-size: cover;
@@ -171,8 +183,8 @@ h2{
 
 .hero{
   
-  width: 50%;
-  height: 66vh;
+  width: 110%;
+  height: 80vh;
   background-image: url("../assets/pictures/pöllö.png"); 
   background-position: center;
   background-size: cover;
@@ -185,7 +197,7 @@ h2{
 
 
 form{
-  width: 90%;
+  width: 80%;
   max-width: 600px;
 }
 
